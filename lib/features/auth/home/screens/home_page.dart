@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this); // 3 pestañas
+    _tabController = TabController(length: 4, vsync: this); // 3 pestañas
   }
 
   @override
@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: const Text('hola oño'),
+        title: const Text('MENU'),
         actions: [
           // Botón de perfil
           IconButton(
@@ -41,11 +41,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         bottom: TabBar(
           controller: _tabController,
           tabs: const [
+            Tab(text: 'INICIO'),
             Tab(text: 'REPORTAR DELITOS'),
             Tab(text: 'HACER DENUNCIAS'),
             Tab(text: 'NOTICIAS'),
-            Tab(text: 'HACER DENUNCIAS'),
-            Tab(text: 'NOTICIAS'),
+            
           ],
           labelColor: Colors.white,
           unselectedLabelColor: Colors.white60,
@@ -59,11 +59,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           child: TabBarView(
             controller: _tabController,
             children: const [
+              Center(child: Text('Inicio')),
               Center(child: Text('Contenido de Reportar Delitos')),
               Center(child: Text('Contenido de Hacer Denuncias')),
               Center(child: Text('Noticias')),
-              Center(child: Text('HACER DENUNCIAS')),
-              Center(child: Text('HACER DENUNCIAS')),
+            
             ],
           ),
         ),
